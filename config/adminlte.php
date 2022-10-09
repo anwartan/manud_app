@@ -256,8 +256,8 @@ return [
     'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
+    'register_url' => '',
+    'password_reset_url' => '',
     'password_email_url' => 'password/email',
     'profile_url' => false,
 
@@ -318,13 +318,19 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
+        ['header' => 'ORGANIZATION'],
+        [
+            'text' => 'Profile',
+            'url'  => 'profile',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'User',
             'url'  => 'admin/user',
             'icon' => 'fas fa-fw fa-user',
         ],
-        ['header' => 'Activity'],
+        ['header' => 'ACTIVITY'],
         [
             'text' => 'Press Release',
             'url'  => 'press-release',

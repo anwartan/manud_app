@@ -36,4 +36,7 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/press-release/update/{press_release}', [App\Http\Controllers\PressReleaseController::class, 'update']);
     Route::get('/press-release/delete/{press_release}', [App\Http\Controllers\PressReleaseController::class, 'destroy']);
 
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
+    Route::put('/profile/{profile}', [App\Http\Controllers\ProfileController::class, 'update']);
+
 });

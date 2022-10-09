@@ -64,9 +64,12 @@
                                         $icon = 'fa-file-image';
                                     }
                                 @endphp
-                                <a target="_blank" href="{{ URL::to('/') . '/files/' . $press_release->image_url }}"
-                                    class="btn-link text-secondary"><i class="far fa-fw {{ $icon }}"></i>
-                                    {{ $press_release->image_url }}</a>
+                                @if (!empty($press_release->image_url))
+                                    <a target="_blank" href="{{ URL::to('/') . '/files/' . $press_release->image_url }}"
+                                        class="btn-link text-secondary"><i class="far fa-fw {{ $icon }}"></i>
+                                        {{ $press_release->image_url }}</a>
+                                @endif
+
                             </li>
                         </ul>
                         <div class="form-group">

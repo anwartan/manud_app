@@ -81,7 +81,7 @@
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href="https://htmlcodex.com"><img class="img-fluid" src="{{ asset('biznews/img/ads.png') }}"
+                <a href="https://htmlcodex.com"><img class="img-fluid" src="{{ asset('biznews/img/ads-728x90png') }}"
                         alt=""></a>
             </div>
         </div>
@@ -415,8 +415,8 @@
                             </div>
                         </div>
                         <div class="col-lg-12 mb-3">
-                            <a href=""><img class="img-fluid w-100" src="{{ asset('biznews/img/ads.png') }}"
-                                    alt=""></a>
+                            <a href=""><img class="img-fluid w-100"
+                                    src="{{ asset('biznews/img/ads-728x90.png') }}" alt=""></a>
                         </div>
                         <div class="col-lg-6">
                             <div class="position-relative mb-3">
@@ -531,8 +531,8 @@
                             </div>
                         </div>
                         <div class="col-lg-12 mb-3">
-                            <a href=""><img class="img-fluid w-100" src="{{ asset('biznews/img/ads.png') }}"
-                                    alt=""></a>
+                            <a href=""><img class="img-fluid w-100"
+                                    src="{{ asset('biznews/img/ads-728x90.png') }}" alt=""></a>
                         </div>
                         <div class="col-lg-12">
                             <div class="row news-lg mx-0 mb-3">
@@ -867,7 +867,7 @@
                         amet elit. Proin vitae porta diam...</a>
                 </div>
             </div>
-            {{-- <div class="col-lg-3 col-md-6 mb-5">
+            <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
                 <div class="m-n1">
                     <a href="" class="btn btn-sm btn-secondary m-1">Politics</a>
@@ -892,7 +892,7 @@
                     <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
                     <a href="" class="btn btn-sm btn-secondary m-1">Foods</a>
                 </div>
-            </div> --}}
+            </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
                 <div class="row">
@@ -940,13 +940,13 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('biznews/lib/easing/easing.min.js') }}"></script>
-    <script src="{{ asset('biznews/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{asset('biznews/https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{asset('biznews/https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('biznews/lib/easing/easing.min.js"></script>
+    <script src="{{asset('biznews/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="{{ asset('biznews/js/main.js') }}"></script>
+    <script src="{{asset('biznews/js/main.js"></script>
 </body>
 
 </html>
