@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Manud Admin</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -321,8 +321,14 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'User',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/user',
             'icon' => 'fas fa-fw fa-user',
+        ],
+        ['header' => 'Activity'],
+        [
+            'text' => 'Press Release',
+            'url'  => 'press-release',
+            'icon' => 'fas fa-fw fa-newspaper',
         ],
         // [
         //     'text' => 'change_password',
@@ -367,22 +373,22 @@ return [
         //         ],
         //     ],
         // ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*
@@ -421,7 +427,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -490,6 +496,61 @@ return [
                 ],
             ],
         ],
+        'bs-custom-file-input'=>[
+            'active'=>false,
+            'files'=>[
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.min.js',
+                ],
+            ]
+        ],
+        // 'DatatablesPlugins' => [
+        //     'active' => true,
+        //     'files' => [
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/buttons/js/dataTables.buttons.min.js',
+        //         ],
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/buttons/js/buttons.bootstrap4.min.js',
+        //         ],
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/buttons/js/buttons.html5.min.js',
+        //         ],
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/buttons/js/buttons.print.min.js',
+        //         ],
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/jszip/jszip.min.js',
+        //         ],
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/pdfmake/pdfmake.min.js',
+        //         ],
+        //         [
+        //             'type' => 'js',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/pdfmake/vfs_fonts.js',
+        //         ],
+        //         [
+        //             'type' => 'css',
+        //             'asset' => true,
+        //             'location' => 'vendor/datatables-plugins/buttons/css/buttons.bootstrap4.min.css',
+        //         ],
+        //     ],
+        // ],
     ],
 
     /*
