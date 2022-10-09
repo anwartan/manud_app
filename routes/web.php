@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 Route::get('/', [App\Http\Controllers\PublicController::class, 'index']);
+Route::get('/401', function(){
+    return view('auth.401');
+})->name('401');
 
 
-Route::middleware(['auth'])->group(function(){
+
+Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/admin/user', [App\Http\Controllers\UserController::class, 'index']);
     Route::get('/admin/user/create', [App\Http\Controllers\UserController::class, 'create']);

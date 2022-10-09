@@ -56,6 +56,14 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label for="role">Role</label>
+                            <select class="custom-select rounded-0" id="role" name="role">
+                                <option value="ADMIN" @if ($user->role === 'ADMIN') selected @endif>ADMIN</option>
+                                <option value="SUPER_ADMIN" @if ($user->role === 'SUPER_ADMIN') selected @endif>SUPER ADMIN
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" name="password"
                                 class="form-control @error('password')

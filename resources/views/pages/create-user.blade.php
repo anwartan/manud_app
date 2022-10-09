@@ -21,7 +21,7 @@
                     @csrf
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <label for="first_name">First Name</label>
                             <input type="text" name="first_name"
@@ -54,6 +54,13 @@
                             @error('email')
                                 <span id="email-error" class="error invalid-feedback">{{ $message }}</span>
                             @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select class="custom-select rounded-0" id="role" name="role">
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="SUPER_ADMIN">SUPER ADMIN</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>

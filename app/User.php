@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','create_at','updated_at','last_name','first_name'
+        'name', 'email', 'password','create_at','updated_at','last_name','first_name','role'
     ];
 
     /**
@@ -36,4 +36,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    // public function isSuperAdmin()
+    // {
+    //     if($this->role ==='SUPER_ADMIN')
+    //     { 
+    //         return true; 
+    //     } 
+    //     else 
+    //     { 
+    //         return false; 
+    //     }
+    // }
+
+    // public function isAdmin()
+    // {
+    //     if($this->role ==='ADMIN')
+    //     { 
+    //         return true; 
+    //     } 
+    //     else 
+    //     { 
+    //         return false; 
+    //     }
+    // }
+    public function hasRole(string $role): bool
+    {
+        return $this->getAttribute('role') === $role;
+    }
 }

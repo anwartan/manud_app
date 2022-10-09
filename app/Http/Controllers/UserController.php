@@ -25,6 +25,7 @@ class UserController extends Controller{
         $validate = $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
+            'role'=>'required|in:SUPER_ADMIN,ADMIN',
             'password' => 'required|min:8|confirmed',
             'email' => 'required|email|unique:users,email',
         ]);
@@ -32,6 +33,7 @@ class UserController extends Controller{
         $user = new User();
         $user->password = Hash::make($request->password);
         $user->email = $request->email;
+        $user->role = $request->role;
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->name = $request->first_name." ".$request->last_name;
@@ -52,6 +54,7 @@ class UserController extends Controller{
         $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
+            'role'=>'required|in:SUPER_ADMIN,ADMIN',
             'password' => 'required|min:8|confirmed',
             'email' => 'required|email',
         ]);
@@ -62,6 +65,7 @@ class UserController extends Controller{
         }
         $request->name=$request->first_name. " ". $request->last_name;
         $user->first_name = $request->first_name;
+        $user->role = $request->role;
         $user->last_name = $request->last_name;
         $user->name = $request->first_name." ".$request->last_name;
         $user->save();
