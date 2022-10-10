@@ -28,7 +28,7 @@ class PressReleaseController extends Controller
             'attachments.*'=>'max:2048',
         ]);
         $image = FileUpload::upload($request->file('image'));
- 
+        $data=[];
         if($request->hasfile('attachments'))
         {
 

@@ -95,14 +95,18 @@
                                         $icon = 'fa-file-image';
                                     }
                                 @endphp
-                                <li class="list-attachment">
-                                    <input type="hidden" name="old_attachments[{{ $key }}]"
-                                        value="{{ $item }}" />
-                                    <a target="_blank" href="{{ URL::to('/') . '/files/' . $item }}"
-                                        class="btn-link text-secondary"><i class="far fa-fw {{ $icon }}"></i>
-                                        {{ $item }} </a>
-                                    <a href="javascript:void(0)" class="btn-tool btn-del"><i class="fas fa-times"></i></a>
-                                </li>
+                                @if (!empty($item))
+                                    <li class="list-attachment">
+                                        <input type="hidden" name="old_attachments[{{ $key }}]"
+                                            value="{{ $item }}" />
+                                        <a target="_blank" href="{{ URL::to('/') . '/files/' . $item }}"
+                                            class="btn-link text-secondary"><i class="far fa-fw {{ $icon }}"></i>
+                                            {{ $item }} </a>
+                                        <a href="javascript:void(0)" class="btn-tool btn-del"><i
+                                                class="fas fa-times"></i></a>
+
+                                    </li>
+                                @endif
                             @endforeach
 
                         </ul>
