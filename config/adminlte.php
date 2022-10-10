@@ -318,6 +318,11 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
+        [
+            'text' => 'Site Application',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-book',
+        ],
         ['header' => 'ORGANIZATION'],
         [
             'text' => 'Profile',

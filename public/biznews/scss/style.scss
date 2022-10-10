@@ -1,15 +1,15 @@
 /******* Bootstrap Theming ********/
 
-$primary: #FFCC00;
-$secondary: #31404B;
-$light: #FFFFFF;
-$dark: #1E2024;
+$primary: #ffcc00;
+$secondary: #31404b;
+$light: #ffffff;
+$dark: #1e2024;
 
-$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-family-sans-serif: "Montserrat", sans-serif;
 
-$body-bg: #EDEFF4;
+$body-bg: #edeff4;
 
-$body-color: #9A9DA2;
+$body-color: #9a9da2;
 
 $headings-color: $secondary;
 
@@ -17,12 +17,11 @@ $enable-responsive-font-sizes: true;
 
 $enable-rounded: false;
 
-$border-color: #E4E7ED;
+$border-color: #e4e7ed;
 
 $grid-gutter-width: 1rem;
 
 @import "bootstrap/scss/bootstrap";
-
 
 /********** Template CSS ************/
 h1,
@@ -114,12 +113,12 @@ h6,
     width: 20px;
     height: 20px;
     background: $light;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .main-carousel .owl-dot.active {
     width: 40px;
-    background: $primary
+    background: $primary;
 }
 
 .tranding-carousel .owl-nav {
@@ -147,7 +146,7 @@ h6,
     background: transparent;
     border: 1px solid $light;
     font-size: 16px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .tranding-carousel .owl-nav .owl-prev:hover,
@@ -203,7 +202,7 @@ h6,
     background: transparent;
     border: 1px solid $secondary;
     font-size: 16px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .news-carousel .owl-nav .owl-prev:hover,
@@ -224,7 +223,11 @@ h6,
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    background: linear-gradient(to bottom, rgba(256, 256, 256, 0), rgba(30, 32, 36, 1));
+    background: linear-gradient(
+        to bottom,
+        rgba(256, 256, 256, 0),
+        rgba(30, 32, 36, 1)
+    );
     z-index: 1;
 }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\PressRelease;
+use App\Profile;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -16,8 +17,9 @@ class SiteController extends Controller
     }
 
     public function profileOrganization(){
-    
-        return view('organization');
+        $profile = Profile::all()->take(1);
+      
+        return view('organization',['profile'=>$profile[0]]);
 
     }
 }
