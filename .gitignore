@@ -1,7 +1,8 @@
 /node_modules
+/public
 /public/hot
 /public/storage
-/public/files/*
+/public/files
 /storage/*.key
 /vendor
 .env
