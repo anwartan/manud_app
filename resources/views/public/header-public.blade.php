@@ -4,9 +4,9 @@
           <div class="col-lg-9">
               <nav class="navbar navbar-expand-sm bg-dark p-0">
                   <ul class="navbar-nav ml-n2">
-                      <li class="nav-item border-right border-secondary">
-                          <a class="nav-link text-body small" href="#">Monday, January 1, 2045</a>
-                      </li>
+                      {{-- <li class="nav-item border-right border-secondary">
+                          <a class="nav-link text-body small" id="datenow" href="#">Monday, January 1, 2045</a>
+                      </li> --}}
                       {{-- <li class="nav-item border-right border-secondary">
                         <a class="nav-link text-body small" href="#">Advertise</a>
                     </li>
@@ -14,7 +14,17 @@
                         <a class="nav-link text-body small" href="#">Contact</a>
                     </li> --}}
                       <li class="nav-item">
-                          <a class="nav-link text-body small" href="{{ route('login') }}">Login</a>
+                          @auth
+
+                              <a class="nav-link text-body small" href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
+                          @else
+                              <a class="nav-link text-body small" href="{{ route('login') }}">Login</a>
+
+                              {{-- @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif --}}
+                          @endauth
+
                       </li>
                   </ul>
               </nav>
@@ -46,15 +56,15 @@
       </div>
       <div class="row align-items-center bg-white py-3 px-lg-5">
           <div class="col-lg-4">
-              <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
-                  <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span
-                          class="text-secondary font-weight-normal">News</span></h1>
+              <a href="{{ url('') }}" class="navbar-brand p-0 d-none d-lg-block">
+                  <h1 class="m-0 display-4 text-uppercase text-primary">Desa<span
+                          class="text-secondary font-weight-normal">MANUD</span></h1>
               </a>
           </div>
-          <div class="col-lg-8 text-center text-lg-right">
+          {{-- <div class="col-lg-8 text-center text-lg-right">
               <a href="https://htmlcodex.com"><img class="img-fluid" src="{{ asset('biznews/img/ads.png') }}"
                       alt=""></a>
-          </div>
+          </div> --}}
       </div>
   </div>
   <!-- Topbar End -->

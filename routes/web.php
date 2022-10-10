@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/', [App\Http\Controllers\PublicController::class, 'index']);
-Route::get('/401', function(){
-    return view('auth.401');
-})->name('401');
-
 
 
 Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
@@ -42,3 +37,10 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
     Route::put('/profile/{profile}', [App\Http\Controllers\ProfileController::class, 'update']);
 
 });
+
+Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);
+Route::get('/organization', [App\Http\Controllers\Site\SiteController::class, 'profileOrganization']);
+
+Route::get('/401', function(){
+    return view('auth.401');
+})->name('401');
