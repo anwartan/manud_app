@@ -72,6 +72,7 @@ class RegisterController extends Controller
             'name' => $data['first_name']." ".$data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role'=>'SUPER_ADMIN'
         ]);
     }
 }
