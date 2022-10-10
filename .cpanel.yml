@@ -2,4 +2,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/desamanu/public_html
 
-    - /usr/bin/rsync -Paz * $DEPLOYPATH --delete
+    - /usr/bin/rsync -Paz * $DEPLOYPATH --update
