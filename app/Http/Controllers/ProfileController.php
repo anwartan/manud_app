@@ -17,7 +17,7 @@ class ProfileController extends Controller
     public function update(Request $request,Profile $profile){
         $request->validate([
             'name' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required',
             'image' =>'mimetypes:image/png,image/jpeg,image/svg|max:2048',
         ]);
         $image="";
@@ -34,7 +34,7 @@ class ProfileController extends Controller
        
         $profile->save();
 
-        return view('pages.profile',['profile'=>$profile]);
+        return redirect('/profile')->with('success','Profile updated successfully');
  
     }
 }

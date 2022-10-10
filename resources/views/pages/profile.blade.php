@@ -9,17 +9,18 @@
 
 @section('content')
     <div class="row">
-        @if (session('failed'))
-            <div class="alert alert-danger">
-                {{ session('failed') }}
-            </div>
-        @endif
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+
         <div class="col-md-6">
+            @if (session('failed'))
+                <div class="alert alert-danger">
+                    {{ session('failed') }}
+                </div>
+            @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Profile Information</h3>
