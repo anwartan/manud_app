@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label for="vision">Vision</label>
                             <textarea name="vision" class="form-control @error('vision') is-invalid @enderror" rows="5"
-                                placeholder="Enter Description">{{ $profile->vision }}</textarea>
+                                placeholder="Enter Vision">{{ $profile->vision }}</textarea>
 
                             @error('vision')
                                 <span id="vision-error" class="error invalid-feedback">{{ $message }}</span>
@@ -64,7 +64,7 @@
                         <div class="form-group">
                             <label for="mission">Mission</label>
                             <textarea name="mission" class="form-control @error('mission') is-invalid @enderror" rows="5"
-                                placeholder="Enter Description">{{ $profile->mission }}</textarea>
+                                placeholder="Enter Mission">{{ $profile->mission }}</textarea>
 
                             @error('mission')
                                 <span id="mission-error" class="error invalid-feedback">{{ $message }}</span>
