@@ -19,6 +19,8 @@ class ProfileController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
             'image' =>'mimetypes:image/png,image/jpeg,image/svg|max:2048',
+            'vision'=>'required',
+            'mission'=>'required'
         ]);
         $image="";
         if($request->hasfile('image'))
@@ -27,6 +29,8 @@ class ProfileController extends Controller
 
         }
         $profile->name=$request->name;
+        $profile->vision=$request->vision;
+        $profile->mission=$request->mission;
         $profile->description=$request->description;
         if(!empty($image)){
             $profile->image_url=$image;

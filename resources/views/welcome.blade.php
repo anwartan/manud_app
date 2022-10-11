@@ -12,7 +12,8 @@
                         <div class="position-relative overflow-hidden" style="height: 500px;">
                             <img class="img-fluid h-100" src="{{ URL::to('/') . '/files/' . $item->image_url }}"
                                 style="object-fit: cover;">
-                            <div class="overlay">
+                            <div class="overlay"
+                                style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0), grey);">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                         href="">Press</a>
@@ -122,11 +123,11 @@
 
 
     <!-- Breaking News Start -->
-    <div class="container-fluid bg-dark py-3 mb-3">
+    {{-- <div class="container-fluid bg-dark py-3 mb-3">
         <div class="container">
             <div class="row align-items-center bg-dark">
                 <div class="col-12">
-                    {{-- <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between">
                         <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">
                             Breaking News</div>
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
@@ -138,11 +139,11 @@
                                     href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante
                                     tincidunt, sed faucibus nisl sodales</a></div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Breaking News End -->
 
 
@@ -178,6 +179,7 @@
 
 
     <!-- News With Sidebar Start -->
+    <br>
     <div class="container-fluid">
         <div class="container">
             <div class="row">
@@ -186,8 +188,8 @@
                         <div class="col-12">
                             <div class="section-title">
                                 <h4 class="m-0 text-uppercase font-weight-bold">Latest Press</h4>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View
-                                    All</a>
+                                {{-- <a class="text-secondary font-weight-medium text-decoration-none" href="">View
+                                    All</a> --}}
                             </div>
                         </div>
                         @foreach ($press_release as $item)
@@ -203,7 +205,7 @@
                                                 href=""><small>{{ date('M d, Y', strtotime($item->created_at)) }}</small></a>
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                            href="">{{ $item->title }}</a>
+                                            href="{{ url('/press-detail') . '/' . $item->id }}">{{ $item->title }}</a>
                                         <p class="m-0">{{ $item->description }}</p>
                                     </div>
                                     {{-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">

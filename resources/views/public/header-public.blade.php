@@ -18,7 +18,7 @@
 
                               <a class="nav-link text-body small" href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
                           @else
-                              <a class="nav-link text-body small" href="{{ route('login') }}">Login</a>
+                              <a class="nav-link text-white small" href="{{ route('login') }}">Login</a>
 
                               {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
@@ -30,7 +30,7 @@
               </nav>
           </div>
           <div class="col-lg-3 text-right d-none d-md-block">
-              <nav class="navbar navbar-expand-sm bg-dark p-0">
+              {{-- <nav class="navbar navbar-expand-sm bg-dark p-0">
                   <ul class="navbar-nav ml-auto mr-n2">
                       <li class="nav-item">
                           <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
@@ -51,7 +51,7 @@
                           <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
                       </li>
                   </ul>
-              </nav>
+              </nav> --}}
           </div>
       </div>
       <div class="row align-items-center bg-white py-3 px-lg-5">

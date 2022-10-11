@@ -16,6 +16,11 @@ class SiteController extends Controller
         return view('welcome',['press_release'=>$press_release,'carousel'=>$carousel]);
     }
 
+    public function pressView(PressRelease $press_release){
+        
+        return view('press-release-detail',['press_release'=>$press_release]);
+    }
+
     public function profileOrganization(){
         $profile = Profile::all()->take(1);
       

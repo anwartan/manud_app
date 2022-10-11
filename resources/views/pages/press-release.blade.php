@@ -6,6 +6,7 @@
     <h1>Press Release</h1>
 @stop
 {{-- @section('plugins.Datatables', true) --}}
+@section('plugins.Sweetalert2', true)
 
 @section('content')
     @php
@@ -14,7 +15,7 @@
         function gen($id)
         {
             $btnUpdate = '<a href=' . url('press-release/update') . '/' . $id . ' class="btn-update btn btn-success btn-xs " title="Details"><i class="fa fa-lg fa-fw fa-pen"></i></a>';
-            $btnDelete = '<a href=' . url('press-release/delete') . '/' . $id . ' class="btn-delete btn btn-xs btn-default text-danger mx-1 shadow" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></a>';
+            $btnDelete = '<a href="javascript:void(0)" data-id=' . $id . ' class="btn-delete btn btn-xs btn-default text-danger mx-1 shadow" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></a>';
         
             return '<span>' . $btnUpdate . $btnDelete . '</span>';
         }
@@ -66,7 +67,23 @@
     <script>
         $(document).ready(function() {
 
+            $('.btn-delete').click(function() {
+                var id = $(this).attr('data-id')
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = "{!! url('/press-release/delete') !!}" + "/" + id
 
+                    }
+                })
+            });
         });
     </script>
 @stop

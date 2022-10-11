@@ -53,6 +53,24 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label for="vision">Vision</label>
+                            <textarea name="vision" class="form-control @error('vision') is-invalid @enderror" rows="5"
+                                placeholder="Enter Description">{{ $profile->vision }}</textarea>
+
+                            @error('vision')
+                                <span id="vision-error" class="error invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="mission">Mission</label>
+                            <textarea name="mission" class="form-control @error('mission') is-invalid @enderror" rows="5"
+                                placeholder="Enter Description">{{ $profile->mission }}</textarea>
+
+                            @error('mission')
+                                <span id="mission-error" class="error invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="image">Image</label>
                             <x-adminlte-input-file accept="image/png, image/gif, image/jpeg" name="image" id="image"
                                 placeholder="Choose Image">
@@ -86,6 +104,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
+                        <a href="{{ url('/profile') }}" class="btn btn-danger">Cancel</a>
                     </div>
                 </form>
             </div>

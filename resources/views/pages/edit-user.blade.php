@@ -91,6 +91,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
+                        <a href="{{ url('admin/user/update/') }}{{ '/' . $user->id }}" class="btn btn-danger">Cancel</a>
                     </div>
                 </form>
             </div>

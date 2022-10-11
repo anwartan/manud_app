@@ -23,8 +23,8 @@ class UserController extends Controller{
     public function save(Request $request){
        
         $validate = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'first_name' => 'required|max:255|min:2',
+            'last_name' => 'required|max:255|min:2',
             'role'=>'required|in:SUPER_ADMIN,ADMIN',
             'password' => 'required|min:8|confirmed',
             'email' => 'required|email|unique:users,email',
@@ -52,8 +52,8 @@ class UserController extends Controller{
     public function update(Request $request,User $user){
         
         $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'first_name' => 'required|max:255|min:2',
+            'last_name' => 'required|max:255|min:2',
             'role'=>'required|in:SUPER_ADMIN,ADMIN',
             'password' => 'required|min:8|confirmed',
             'email' => 'required|email',

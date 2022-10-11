@@ -40,6 +40,7 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
 
 Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);
 Route::get('/organization', [App\Http\Controllers\Site\SiteController::class, 'profileOrganization']);
+Route::get('/press-detail/{press_release}', [App\Http\Controllers\Site\SiteController::class, 'pressView']);
 
 Route::get('/401', function(){
     return view('auth.401');
