@@ -114,8 +114,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
-                        <a href="{{ url('press-release/update/') }}{{ '/' . $press_release->id }}"
-                            class="btn btn-danger">Cancel</a>
+                        <a href="{{ url('press-release/') }}" class="btn btn-danger">Cancel</a>
 
                     </div>
                 </form>
