@@ -61,6 +61,9 @@ class UserController extends Controller{
             'role'=>'required|in:SUPER_ADMIN,ADMIN',
             'password' => 'required|min:8|confirmed',
             'email' => 'required|email',
+        ],
+        [
+            'password.confirmed'=>'Password doesn\'t match'
         ]);
         if(Hash::check($request->password, $user->password)==false){
             
