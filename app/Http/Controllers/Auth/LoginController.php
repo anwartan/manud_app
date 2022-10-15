@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -20,6 +24,25 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
+    
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        $auth = User::where('email',$request->email) -> first();
+     
+        if($auth==null){
+            throw ValidationException::withMessages([
+                $this->username() => [trans('auth.unregistered_email')],
+            ]);
+        }
+        if(Hash::check($request->password, $auth->password)==false){
+            throw ValidationException::withMessages([
+                'password'=> [trans('auth.password_not_match')],
+            ]);
+        }
+    }
+
+ 
 
     /**
      * Where to redirect users after login.
