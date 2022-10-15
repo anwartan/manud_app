@@ -28,6 +28,10 @@ class UserController extends Controller{
             'role'=>'required|in:SUPER_ADMIN,ADMIN',
             'password' => 'required|min:8|confirmed',
             'email' => 'required|email|unique:users,email',
+        ],
+        [
+            'email.unique'=>'The email has already been taken.',
+            'password.confirmed'=>'Password doesn\'t match'
         ]);
    
         $user = new User();
