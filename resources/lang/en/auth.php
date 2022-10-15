@@ -15,5 +15,6 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'unregistered_email' => 'Email has not yet registered',
+    'password_not_match' => 'Password doesn\'t match'
 ];

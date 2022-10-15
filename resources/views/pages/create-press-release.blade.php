@@ -58,7 +58,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
-                        <a href="{{ url('press-release/create/') }}" class="btn btn-danger">Cancel</a>
+                        <a href="{{ url('press-release/') }}" class="btn btn-danger">Cancel</a>
 
                     </div>
                 </form>
