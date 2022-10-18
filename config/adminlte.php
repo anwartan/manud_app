@@ -341,6 +341,11 @@ return [
             'url'  => 'press-release',
             'icon' => 'fas fa-fw fa-newspaper',
         ],
+        [
+            'text' => 'Information & Event',
+            'url'  => 'event',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
