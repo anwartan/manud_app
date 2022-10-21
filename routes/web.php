@@ -36,6 +36,9 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
     Route::put('/profile/{profile}', [App\Http\Controllers\ProfileController::class, 'update']);
 
+    Route::resource('/lowongan',LowonganController::class);
+    Route::get('/lowongan/delete/{lowongan}', [App\Http\Controllers\LowonganController::class, 'destroy']);
+
 });
 
 Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);

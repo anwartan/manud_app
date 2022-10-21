@@ -341,6 +341,11 @@ return [
             'url'  => 'press-release',
             'icon' => 'fas fa-fw fa-newspaper',
         ],
+        [
+            'text' => 'Lowongan',
+            'url'  => 'lowongan',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
