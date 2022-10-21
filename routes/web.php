@@ -40,6 +40,9 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
     Route::resource('event', EventController::class);
     Route::get('/event/delete/{event}', [App\Http\Controllers\EventController::class, 'destroy']);
 
+    Route::resource('/lowongan',LowonganController::class);
+    Route::get('/lowongan/delete/{lowongan}', [App\Http\Controllers\LowonganController::class, 'destroy']);
+
 });
 
 Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);
