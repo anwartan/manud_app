@@ -342,6 +342,11 @@ return [
             'icon' => 'fas fa-fw fa-newspaper',
         ],
         [
+            'text' => 'Information & Event',
+            'url'  => 'event',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        [
             'text' => 'Lowongan',
             'url'  => 'lowongan',
             'icon' => 'fas fa-fw fa-user',
