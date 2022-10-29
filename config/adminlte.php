@@ -351,6 +351,11 @@ return [
             'url'  => 'lowongan',
             'icon' => 'fas fa-fw fa-user',
         ],
+        [
+            'text' => 'Layanan Kesahatan',
+            'url'  => 'layanan',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
@@ -525,6 +530,38 @@ return [
                     'asset' => true,
                     'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.min.js',
                 ],
+            ]
+        ],
+        'daterangepicker'=>[
+            'active'=>false,
+            'files'=>[
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/moment/moment.min.js',
+                ],
+                
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/moment/locales.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/moment/moment-with-locales.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/daterangepicker/daterangepicker.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/daterangepicker/daterangepicker.css',
+                ],
+              
             ]
         ],
         // 'DatatablesPlugins' => [
