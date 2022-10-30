@@ -23,7 +23,7 @@ class PressReleaseController extends Controller
     public function save(Request $request){
         $validate = $request->validate([
             'title' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required',
             'image' => 'required|mimetypes:image/png,image/jpeg,image/svg|max:2048',
             'attachments.*'=>'max:2048',
         ]);
@@ -56,7 +56,7 @@ class PressReleaseController extends Controller
     public function update(Request $request,PressRelease $press_release){
         $validate = $request->validate([
             'title' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required',
             'image' => 'mimetypes:image/png,image/jpeg,image/svg|max:2048',
             'attachments.*'=>'max:2048',
         ]);

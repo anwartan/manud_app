@@ -11,7 +11,7 @@
 @section('content')
     @php
         $data = [];
-        $heads = ['Id', 'Title', 'Description', 'Tag', ['label' => 'Created At', 'width' => 10], ['label' => 'Updated At', 'width' => 10], ['label' => 'Action', 'width' => 10]];
+        $heads = ['Id', 'Title', 'Description', 'Tag', 'Link Url', ['label' => 'Created At', 'width' => 10], ['label' => 'Updated At', 'width' => 10], ['label' => 'Action', 'width' => 10]];
         function gen($id)
         {
             $btnUpdate = '<a href=' . url('event') . '/' . $id . '/edit' . ' class="btn-update btn btn-success btn-xs " title="Details"><i class="fa fa-lg fa-fw fa-pen"></i></a>';
@@ -20,12 +20,12 @@
             return '<span>' . $btnUpdate . $btnDelete . '</span>';
         }
         foreach ($event as $value) {
-            $data[] = [$value->id, $value->title, $value->description, AppEvent::getTagByKey($value->tag), $value->created_at, $value->updated_at, gen($value->id)];
+            $data[] = [$value->id, $value->title, $value->description, AppEvent::getTagByKey($value->tag), '<a target="_blank" href=' . $value->link_url . '>' . $value->link_url . '</a>', $value->created_at, $value->updated_at, gen($value->id)];
         }
         $config = [
             'data' => $data,
             'order' => [[2, 'asc']],
-            'columns' => [['visible' => false], null, null, null, null, null, ['orderable' => false]],
+            'columns' => [['visible' => false], null, null, null, null, null, null, ['orderable' => false]],
             'destroy' => true,
         ];
     @endphp

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Press Release')
+@section('title', 'Lowongan')
 
 @section('content_header')
-    <h1>Update Event</h1>
+    <h1>Update Pengaduan</h1>
 @stop
 {{-- @section('plugins.Datatables', true) --}}
 @section('plugins.bs-custom-file-input', true)
@@ -11,13 +11,23 @@
     <div class="row">
 
         <div class="col-md-6">
+            @if (session('failed'))
+                <div class="alert alert-danger">
+                    {{ session('failed') }}
+                </div>
+            @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Event Information</h3>
+                    <h3 class="card-title">Pengaduan Information</h3>
                 </div>
 
 
-                <form enctype="multipart/form-data" action="{{ url('event/') }}{{ '/' . $event->id }}" method="POST">
+                <form enctype="multipart/form-data" action="{{ url('pengaduan/') }}{{ '/' . $pengaduan->id }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -29,7 +39,7 @@
                                 class="form-control @error('title')
                             is-invalid
                             @enderror"
-                                id="title" placeholder="Enter name" value="{{ $event->title }}">
+                                id="title" placeholder="Enter name" value="{{ $pengaduan->title }}">
                             @error('title')
                                 <span id="title-error" class="error invalid-feedback">{{ $message }}</span>
                             @enderror
@@ -37,22 +47,13 @@
                         <div class="form-group">
                             <label for="description">Description</label>
                             <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="5"
-                                placeholder="Enter Description">{{ $event->description }}</textarea>
+                                placeholder="Enter Description">{{ $pengaduan->description }}</textarea>
 
                             @error('description')
                                 <span id="description-error" class="error invalid-feedback">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="tag">Tag</label>
-                            <select class="custom-select rounded-0" name="tag" id="tag">
-                                @foreach ($tags as $key => $item)
-                                    <option value="{{ $key }}" {{ $key === $event->tag ? 'selected' : '' }}>
-                                        {{ $item }}</option>
-                                @endforeach
 
-                            </select>
-                        </div>
                         <div class="form-group">
 
                             <label for="title">Link Url</label>
@@ -61,7 +62,7 @@
                                     class="form-control @error('link_url')
                             is-invalid
                             @enderror"
-                                    id="link_url" placeholder="Enter Link Url" value="{{ $event->link_url }}">
+                                    id="link_url" placeholder="Enter Link Url" value="{{ $pengaduan->link_url }}">
                                 <span class="input-group-append">
                                     <button type="button" id="openLink" class="btn btn-info btn-flat">Open
                                         Link</button>
@@ -81,7 +82,7 @@
                         <ul class="list-unstyled">
                             <li>
                                 @php
-                                    $ext = strtolower(pathinfo($event->image_url, PATHINFO_EXTENSION));
+                                    $ext = strtolower(pathinfo($pengaduan->image_url, PATHINFO_EXTENSION));
                                     
                                     $icon = 'fa-file';
                                     if ($ext == 'pdf') {
@@ -92,10 +93,10 @@
                                         $icon = 'fa-file-image';
                                     }
                                 @endphp
-                                @if (!empty($event->image_url))
-                                    <a target="_blank" href="{{ URL::to('/') . '/files/' . $event->image_url }}"
+                                @if (!empty($pengaduan->image_url))
+                                    <a target="_blank" href="{{ URL::to('/') . '/files/' . $pengaduan->image_url }}"
                                         class="btn-link text-secondary"><i class="far fa-fw {{ $icon }}"></i>
-                                        {{ $event->image_url }}</a>
+                                        {{ $pengaduan->image_url }}</a>
                                 @endif
 
                             </li>
@@ -107,7 +108,7 @@
                             </x-adminlte-input-file>
                         </div>
                         @php
-                            $arrayAttachments = explode(';', $event->attachments);
+                            $arrayAttachments = explode(';', $pengaduan->attachments);
                         @endphp
                         <ul class="list-unstyled">
                             @foreach ($arrayAttachments as $key => $item)
@@ -142,7 +143,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Save</button>
-                        <a href="{{ url('event/') }}" class="btn btn-danger">Cancel</a>
+                        {{-- <a href="{{ url('pengaduan/') }}" class="btn btn-danger">Cancel</a> --}}
 
                     </div>
                 </form>

@@ -55,6 +55,25 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group">
+
+                            <label for="title">Link Url</label>
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="link_url"
+                                    class="form-control @error('link_url')
+                            is-invalid
+                            @enderror"
+                                    id="link_url" placeholder="Enter Link Url" value="{{ $layanan->link_url }}">
+                                <span class="input-group-append">
+                                    <button type="button" id="openLink" class="btn btn-info btn-flat">Open
+                                        Link</button>
+                                </span>
+                                @error('link_url')
+                                    <span id="title-error" class="error invalid-feedback">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="card-footer">
@@ -89,6 +108,11 @@
                 function(start, end, label) {
 
                 });
+            $("#openLink").click(function() {
+                var link = $("#link_url").val()
+
+                window.open(link, "_blank")
+            })
         })
     </script>
 @stop

@@ -23,6 +23,6 @@ class Event extends Model
     }
     
     protected $fillable = [
-        'title', 'description', 'tag','image_url','attachments'
+        'title', 'description', 'tag','image_url','attachments','link_url'
     ];
 }

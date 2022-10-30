@@ -352,8 +352,13 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Layanan Kesahatan',
+            'text' => 'Layanan Kesehatan',
             'url'  => 'layanan',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Pengaduan',
+            'url'  => 'pengaduan',
             'icon' => 'fas fa-fw fa-user',
         ],
         // [

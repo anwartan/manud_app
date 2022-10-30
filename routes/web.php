@@ -45,12 +45,19 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
 
     Route::resource('/layanan',LayananController::class);
     Route::get('/layanan/delete/{layanan}', [App\Http\Controllers\LayananController::class, 'destroy']);
+    
+    Route::resource('/pengaduan',PengaduanController::class);
 
 });
 
 Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);
 Route::get('/organization', [App\Http\Controllers\Site\SiteController::class, 'profileOrganization']);
 Route::get('/press-detail/{press_release}', [App\Http\Controllers\Site\SiteController::class, 'pressView']);
+Route::get('/layanan-pekerjaan', [App\Http\Controllers\Site\SiteController::class, 'layananPekerjaan']);
+Route::get('/layanan-kesehatan', [App\Http\Controllers\Site\SiteController::class, 'layananKesehatan']);
+Route::get('/layanan-pengaduan', [App\Http\Controllers\Site\SiteController::class, 'layananPengaduan']);
+Route::get('/information-event', [App\Http\Controllers\Site\SiteController::class, 'information']);
+
 
 Route::get('/401', function(){
     return view('auth.401');

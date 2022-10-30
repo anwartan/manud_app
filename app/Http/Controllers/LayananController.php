@@ -42,11 +42,14 @@ class LayananController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'schedule' => 'required|date_format:d/m/Y h:i A',
+            'link_url' => 'url'
         ]);
 
         $layanan = new Layanan();
         $layanan->name = $request->name;
         $layanan->schedule = Carbon::createFromFormat('d/m/Y h:i A',$request->schedule)->format('Y-m-d H:i:s');
+        $layanan->link_url=$request->link_url;
+
         $layanan->save();
         return redirect('/layanan')
                         ->with('success','Layanan created successfully.');
@@ -88,9 +91,12 @@ class LayananController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'schedule' => 'required|date_format:d/m/Y h:i A',
+            'link_url' => 'url'
+
         ]);
         $layanan->name = $request->name;
         $layanan->schedule = Carbon::createFromFormat('d/m/Y h:i A',$request->schedule)->format('Y-m-d H:i:s');
+        $layanan->link_url=$request->link_url;
         $layanan->save();
         return redirect('/layanan')
                         ->with('success','Layanan updated successfully.');

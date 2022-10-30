@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLayananTables extends Migration
+class CreatePengaduanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateLayananTables extends Migration
      */
     public function up()
     {
-        Schema::create('layanans', function (Blueprint $table) {
+        Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->dateTime("schedule");
+            $table->string('title');
+            $table->text('description');
+            $table->string('image_url');
+            $table->string('link_url');
+            $table->string('attachments');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateLayananTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('layanans');
+        Schema::dropIfExists('pengaduans');
     }
 }

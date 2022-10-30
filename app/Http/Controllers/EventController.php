@@ -41,8 +41,9 @@ class EventController extends Controller
     {
         $validate = $request->validate([
             'title' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required',
             'tag'=>'required',
+            'link_url'=>'url',
             'image' => 'required|mimetypes:image/png,image/jpeg,image/svg|max:2048',
             'attachments.*'=>'max:2048',
         ]);
@@ -62,6 +63,7 @@ class EventController extends Controller
         $event->title = $request->title;
         $event->tag = $request->tag;
         $event->description = $request->description;
+        $event->link_url=$request->link_url;
         $event->image_url = $image;
         $event->attachments=collect($data)->implode(";");
         $event->save();
@@ -104,8 +106,9 @@ class EventController extends Controller
     {
         $validate = $request->validate([
             'title' => 'required|max:255',
-            'description' => 'required|max:255',
+            'description' => 'required',
             'tag'=>'required',
+            'link_url'=>'url',
             'image' => 'mimetypes:image/png,image/jpeg,image/svg|max:2048',
             'attachments.*'=>'max:2048',
         ]);
@@ -129,6 +132,7 @@ class EventController extends Controller
         if(!empty($image)){
             $event->image_url=$image;
         }
+        $event->link_url=$request->link_url;
         $event->tag = $request->tag;
         $event->attachments=collect($data)->implode(";");
         $event->save();

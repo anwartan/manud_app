@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLayananTables extends Migration
+class AddLinkUrlEventTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateLayananTables extends Migration
      */
     public function up()
     {
-        Schema::create('layanans', function (Blueprint $table) {
-            $table->id();
-            $table->string("name");
-            $table->dateTime("schedule");
-            $table->timestamps();
+        Schema::table('events', function (Blueprint $table) {
+            $table->string('link_url');
         });
     }
 
@@ -28,6 +25,6 @@ class CreateLayananTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('layanans');
+        //
     }
 }

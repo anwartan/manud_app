@@ -10,7 +10,7 @@ class Layanan extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'schedule'
+        'name', 'schedule','link_url'
     ];
 
     public function getSchedule(){
