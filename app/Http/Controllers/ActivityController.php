@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
+use App\FileUpload;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -13,7 +17,8 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        //
+        $activities = Activity::all();
+        return view('pages.activity',['activities'=>$activities]);
     }
 
     /**
@@ -23,7 +28,7 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create-activity');
     }
 
     /**
@@ -34,7 +39,34 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+        
+            $request->validate([
+               'title' => 'required|max:255',
+               'description' => 'required|max:255',
+               'attachments.*'=>'max:2048',
+           ]);
+           $data=[];
+           if($request->hasfile('attachments'))
+           {
+   
+              foreach($request->file('attachments') as $file)
+              {
+                   $name = FileUpload::upload($file);
+                   $data[] = $name;  
+              }
+           }
+           $activity = new Activity();
+           $activity->title = $request->title;
+           $activity->description = $request->description;
+           $activity->attachments=collect($data)->implode(";");
+           $activity->save();
+           return redirect('/activity')
+           ->with('success','Activity created successfully.');
+       }catch(Exception $ex){
+           return redirect('/activity')
+           ->with('failed',$ex->getMessage());
+       }
     }
 
     /**
@@ -54,9 +86,9 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Activity $activity)
     {
-        //
+        return view('pages.edit-activity',compact('activity'));
     }
 
     /**
@@ -66,9 +98,35 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Activity $activity)
     {
-        //
+        try{
+        
+            $request->validate([
+               'title' => 'required|max:255',
+               'description' => 'required|max:255',
+               'attachments.*'=>'max:2048',
+           ]);
+           $data=[];
+           if($request->hasfile('attachments'))
+           {
+   
+              foreach($request->file('attachments') as $file)
+              {
+                   $name = FileUpload::upload($file);
+                   $data[] = $name;  
+              }
+           }
+           $activity->title = $request->title;
+           $activity->description = $request->description;
+           $activity->attachments=collect($data)->implode(";");
+           $activity->save();
+           return redirect('/activity')
+           ->with('success','Activity updated successfully.');
+       }catch(Exception $ex){
+           return redirect('/activity')
+           ->with('failed',$ex->getMessage());
+       }
     }
 
     /**
@@ -77,8 +135,10 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Activity $activity)
     {
-        //
+        $activity->delete();
+        return redirect('/activity')
+            ->with('success','Activity deleted successfully.');
     }
 }

@@ -361,6 +361,16 @@ return [
             'url'  => 'pengaduan',
             'icon' => 'fas fa-fw fa-user',
         ],
+        [
+            'text' => 'Budget',
+            'url'  => 'budget',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        [
+            'text' => 'Activity',
+            'url'  => 'activity',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
