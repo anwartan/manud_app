@@ -57,6 +57,7 @@ Route::get('/layanan-pekerjaan', [App\Http\Controllers\Site\SiteController::clas
 Route::get('/layanan-kesehatan', [App\Http\Controllers\Site\SiteController::class, 'layananKesehatan']);
 Route::get('/layanan-pengaduan', [App\Http\Controllers\Site\SiteController::class, 'layananPengaduan']);
 Route::get('/information-event', [App\Http\Controllers\Site\SiteController::class, 'information']);
+Route::get('/information-event/{event}', [App\Http\Controllers\Site\SiteController::class, 'informationDetailView']);
 
 
 Route::get('/401', function(){

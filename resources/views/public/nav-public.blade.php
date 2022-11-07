@@ -25,7 +25,7 @@
                            <a href="{{ url('information-event') . '?tag=EVENT' }}" class="dropdown-item">Informasi
                                Event</a>
                            <a href="{{ url('information-event') . '?tag=CULTURE' }}" class="dropdown-item">Informasi
-                               Kebudayaan</a>
+                               Karya UMKM</a>
                            <a href="#" class="dropdown-item">Galeri</a>
                            <a href="#" class="dropdown-item">Informasi Lokasi</a>
                        </div>

@@ -21,7 +21,7 @@
                                         href="">{{ date('M d, Y', strtotime($item->created_at)) }}</a>
                                 </div>
                                 <a class="h2 m-0 text-white text-uppercase font-weight-bold"
-                                    href="{{ $item->link_url }}">{{ $item->title }}</a>
+                                    href="{{ url('/information-event') . '/' . $item->id }}">{{ $item->title }}</a>
                             </div>
                         </div>
                     @endforeach
@@ -56,7 +56,7 @@
                                                 href=""><small>{{ date('M d, Y', strtotime($item->created_at)) }}</small></a>
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                            href="">{{ $item->title }}</a>
+                                            href="{{ url('/information-event') . '/' . $item->id }}">{{ $item->title }}</a>
                                         <p class="m-0">{{ $item->description }}</p>
                                         <div class="row">
                                             <div class="col-12">

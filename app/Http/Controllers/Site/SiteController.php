@@ -58,4 +58,9 @@ class SiteController extends Controller
         $carousel = Event::where("tag",$tag)->orderBy('created_at')->take(3)->get();
         return view('event',['events'=>$event,'carousel'=>$carousel,'tag'=>$tag]);
     }
+    public function informationDetailView(Event $event)
+    {   
+
+        return view('event-detail',['event'=>$event]);
+    }
 }
