@@ -371,6 +371,11 @@ return [
             'url'  => 'activity',
             'icon' => 'fas fa-fw fa-newspaper',
         ],
+        [
+            'text' => 'Report',
+            'url'  => 'report',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

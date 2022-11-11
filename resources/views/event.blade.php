@@ -47,7 +47,7 @@
                             <div class="col-lg-6">
                                 <div class="position-relative mb-3">
                                     <img class="img-fluid w-100" src="{{ URL::to('/') . '/files/' . $item->image_url }}"
-                                        style="object-fit: cover;">
+                                        style="object-fit: cover;height:200px">
                                     <div class="bg-white border border-top-0 p-4">
                                         <div class="mb-2">
                                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
