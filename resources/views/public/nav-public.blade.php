@@ -20,13 +20,18 @@
                            <a href="{{ url('layanan-pekerjaan') }}" class="dropdown-item">Layanan Pekerjaan</a>
                            <a href="{{ url('layanan-kesehatan') }}" class="dropdown-item">Layanan Kesehatan</a>
                            <a href="{{ url('layanan-pengaduan') }}" class="dropdown-item">Pengaduan</a>
+                           <a href="#" class="dropdown-item">Galeri</a>
+                       </div>
+                   </div>
+                   <div class="nav-item dropdown">
+                       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi</a>
+                       <div class="dropdown-menu rounded-0 m-0">
                            <a href="{{ url('information-event') . '?tag=CULINARY' }}" class="dropdown-item">Informasi
                                Kuliner</a>
                            <a href="{{ url('information-event') . '?tag=EVENT' }}" class="dropdown-item">Informasi
                                Event</a>
                            <a href="{{ url('information-event') . '?tag=CULTURE' }}" class="dropdown-item">Informasi
                                Karya UMKM</a>
-                           <a href="#" class="dropdown-item">Galeri</a>
                            <a href="#" class="dropdown-item">Informasi Lokasi</a>
                        </div>
                    </div>

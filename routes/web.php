@@ -48,6 +48,14 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
     
     Route::resource('/pengaduan',PengaduanController::class);
 
+    Route::resource('/budget',BudgetController::class);
+    Route::get('/budget/delete/{budget}', [App\Http\Controllers\BudgetController::class, 'destroy']);
+
+    Route::resource('/activity',ActivityController::class);
+    Route::get('/activity/delete/{activity}', [App\Http\Controllers\ActivityController::class, 'destroy']);
+
+    Route::resource('/report',ReportController::class);
+    Route::get('/report/delete/{report}', [App\Http\Controllers\ReportController::class, 'destroy']);
 });
 
 Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);
