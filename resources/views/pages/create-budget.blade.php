@@ -7,7 +7,7 @@
 @stop
 {{-- @section('plugins.Datatables', true) --}}
 @section('plugins.bs-custom-file-input', true)
-@section('plugins.Date Range Picker', true)
+@section('plugins.daterangepicker', true)
 
 @section('content')
     <div class="row">
