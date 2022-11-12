@@ -80,20 +80,12 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        window.location.href = "{!! url('/lowongan/delete') !!}" + "/" + id
+                        window.location.href = "{!! url('/report/delete') !!}" + "/" + id
 
                     }
                 })
             });
-            $('#users').DataTable({
-                'columnDefs' => [
-                    [
-                        'targets' => 3,
 
-                        'render' => ,
-                    ],
-                ],
-            })
         });
     </script>
 @stop
