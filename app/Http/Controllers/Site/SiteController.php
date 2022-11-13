@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Activity;
+use App\Budget;
 use App\Event;
 use App\Http\Controllers\Controller;
 use App\Layanan;
@@ -97,17 +98,25 @@ class SiteController extends Controller
     }
     public function layananRulesProductView(ProductRole $role_product)
     {   
-
         return view('role-product-detail',['role_product'=>$role_product]);
     }
     public function layananAktivitasView(Activity $activity)
     {   
-
         return view('aktivitas-detail',['activity'=>$activity]);
     }
     public function layananLaporanDetail(Report $report)
     {   
-
         return view('laporan-detail',['report'=>$report]);
+    }
+    public function layananBudget()
+    {   
+        $budget = Budget::all();
+        $carousel = Budget::orderBy('created_at')->take(3)->get();
+
+        return view('layanan-budget',['budgets'=>$budget,'carousel'=>$carousel]);
+    }
+    public function layananBudgetDetail(Budget $budget)
+    {   
+        return view('budget-detail',['budget'=>$budget]);
     }
 }

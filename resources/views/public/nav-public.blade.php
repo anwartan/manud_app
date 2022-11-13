@@ -36,11 +36,13 @@
                            <a href="{{ url('information-report') }}" class="dropdown-item">Informasi Laporan</a>
                            <a href="{{ url('information-role-product') }}" class="dropdown-item">Informasi Rules
                                Product</a>
+                           <a href="{{ url('information-budget') }}" class="dropdown-item">Informasi Budget</a>
                        </div>
                    </div>
                    <a href="{{ url('organization') }}"
-                       class="nav-item nav-link {{ request()->is('organization') ? 'active' : '' }}">Profil
-                       Desa Manud Jaya</a>
+                       class="nav-item nav-link {{ request()->is('organization') ? 'active' : '' }}">Profil Desa Manud
+                       Jaya
+                   </a>
                </div>
                {{-- <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                 <input type="text" class="form-control border-0" placeholder="Keyword">
