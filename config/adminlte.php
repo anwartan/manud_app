@@ -376,6 +376,16 @@ return [
             'url'  => 'report',
             'icon' => 'fas fa-fw fa-newspaper',
         ],
+        [
+            'text' => 'Product Role',
+            'url'  => 'product-role',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        [
+            'text' => 'Tourism Attraction',
+            'url'  => 'tourism-attraction',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

@@ -20,7 +20,7 @@
                            <a href="{{ url('layanan-pekerjaan') }}" class="dropdown-item">Layanan Pekerjaan</a>
                            <a href="{{ url('layanan-kesehatan') }}" class="dropdown-item">Layanan Kesehatan</a>
                            <a href="{{ url('layanan-pengaduan') }}" class="dropdown-item">Pengaduan</a>
-                           <a href="#" class="dropdown-item">Galeri</a>
+                           <a href="{{ url('layanan-wisata') }}" class="dropdown-item">Tempat Wisata</a>
                        </div>
                    </div>
                    <div class="nav-item dropdown">
@@ -32,12 +32,15 @@
                                Event</a>
                            <a href="{{ url('information-event') . '?tag=CULTURE' }}" class="dropdown-item">Informasi
                                Karya UMKM</a>
-                           <a href="#" class="dropdown-item">Informasi Lokasi</a>
+                           <a href="{{ url('information-activity') }}" class="dropdown-item">Informasi Aktivitas</a>
+                           <a href="{{ url('information-report') }}" class="dropdown-item">Informasi Laporan</a>
+                           <a href="{{ url('information-role-product') }}" class="dropdown-item">Informasi Rules
+                               Product</a>
                        </div>
                    </div>
                    <a href="{{ url('organization') }}"
                        class="nav-item nav-link {{ request()->is('organization') ? 'active' : '' }}">Profil
-                       Organisasi</a>
+                       Desa Manud Jaya</a>
                </div>
                {{-- <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                 <input type="text" class="form-control border-0" placeholder="Keyword">
