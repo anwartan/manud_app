@@ -83,6 +83,8 @@ Route::get('/information-report/{report}', [App\Http\Controllers\Site\SiteContro
 
 Route::get('/information-role-product', [App\Http\Controllers\Site\SiteController::class, 'layananRulesProduct']);
 Route::get('/information-role-product/{role_product}', [App\Http\Controllers\Site\SiteController::class, 'layananRulesProductView']);
+Route::get('/information-budget', [App\Http\Controllers\Site\SiteController::class, 'layananBudget']);
+Route::get('/information-budget/{budget}', [App\Http\Controllers\Site\SiteController::class, 'layananBudgetDetail']);
 
 
 Route::get('/401', function(){
