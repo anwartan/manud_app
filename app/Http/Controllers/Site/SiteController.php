@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Activity;
 use App\Event;
 use App\Http\Controllers\Controller;
 use App\Layanan;
 use App\Lowongan;
 use App\Pengaduan;
 use App\PressRelease;
+use App\ProductRole;
 use App\Profile;
+use App\Report;
+use App\TourismAttraction;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -62,5 +66,48 @@ class SiteController extends Controller
     {   
 
         return view('event-detail',['event'=>$event]);
+    }
+    public function layananWisata()
+    {   
+        $wisatas = TourismAttraction::all();
+        $carousel = TourismAttraction::orderBy('created_at')->take(3)->get();
+
+        return view('layanan-wisata',['wisatas'=>$wisatas,'carousel'=>$carousel]);
+    }
+    public function layananAktivitas()
+    {   
+        $activities = Activity::all();
+        $carousel = Activity::orderBy('created_at')->take(3)->get();
+
+        return view('layanan-aktivitas',['activities'=>$activities,'carousel'=>$carousel]);
+    }
+    public function layananLaporan()
+    {   
+        $laporan = Report::all();
+        $carousel = Report::orderBy('created_at')->take(3)->get();
+
+        return view('layanan-laporan',['laporans'=>$laporan,'carousel'=>$carousel]);
+    }
+
+    public function layananRulesProduct()
+    {   
+        $product_roles = ProductRole::all();
+        $carousel = ProductRole::orderBy('created_at')->take(3)->get();
+        return view('layanan-role-product',['product_roles'=>$product_roles,'carousel'=>$carousel]);
+    }
+    public function layananRulesProductView(ProductRole $role_product)
+    {   
+
+        return view('role-product-detail',['role_product'=>$role_product]);
+    }
+    public function layananAktivitasView(Activity $activity)
+    {   
+
+        return view('aktivitas-detail',['activity'=>$activity]);
+    }
+    public function layananLaporanDetail(Report $report)
+    {   
+
+        return view('laporan-detail',['report'=>$report]);
     }
 }

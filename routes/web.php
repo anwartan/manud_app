@@ -56,6 +56,14 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
 
     Route::resource('/report',ReportController::class);
     Route::get('/report/delete/{report}', [App\Http\Controllers\ReportController::class, 'destroy']);
+
+    Route::resource('/product-role',ProductRoleController::class);
+    Route::get('/product-role/delete/{product_role}', [App\Http\Controllers\ProductRoleController::class, 'destroy']);
+
+    Route::resource('/tourism-attraction',TourismAttractionController::class);
+    Route::get('/tourism-attraction/delete/{tourism_attraction}', [App\Http\Controllers\TourismAttractionController::class, 'destroy']);
+
+    
 });
 
 Route::get('/', [App\Http\Controllers\Site\SiteController::class, 'index']);
@@ -64,8 +72,17 @@ Route::get('/press-detail/{press_release}', [App\Http\Controllers\Site\SiteContr
 Route::get('/layanan-pekerjaan', [App\Http\Controllers\Site\SiteController::class, 'layananPekerjaan']);
 Route::get('/layanan-kesehatan', [App\Http\Controllers\Site\SiteController::class, 'layananKesehatan']);
 Route::get('/layanan-pengaduan', [App\Http\Controllers\Site\SiteController::class, 'layananPengaduan']);
+Route::get('/layanan-wisata', [App\Http\Controllers\Site\SiteController::class, 'layananWisata']);
+
 Route::get('/information-event', [App\Http\Controllers\Site\SiteController::class, 'information']);
 Route::get('/information-event/{event}', [App\Http\Controllers\Site\SiteController::class, 'informationDetailView']);
+Route::get('/information-activity', [App\Http\Controllers\Site\SiteController::class, 'layananAktivitas']);
+Route::get('/information-activity/{activity}', [App\Http\Controllers\Site\SiteController::class, 'layananAktivitasView']);
+Route::get('/information-report', [App\Http\Controllers\Site\SiteController::class, 'layananLaporan']);
+Route::get('/information-report/{report}', [App\Http\Controllers\Site\SiteController::class, 'layananLaporanDetail']);
+
+Route::get('/information-role-product', [App\Http\Controllers\Site\SiteController::class, 'layananRulesProduct']);
+Route::get('/information-role-product/{role_product}', [App\Http\Controllers\Site\SiteController::class, 'layananRulesProductView']);
 
 
 Route::get('/401', function(){
