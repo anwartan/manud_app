@@ -13,7 +13,7 @@ class Event extends Model
         $tags = [
             'EVENT'=>'Event',
             'CULINARY'=>'Culinary',
-            'CULTURE'=>'Culture'
+            'CULTURE'=>'Karya UMKM'
         ];
         return $tags;
     }

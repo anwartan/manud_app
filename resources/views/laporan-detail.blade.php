@@ -45,7 +45,38 @@
                         <div class="bg-white border border-top-0 p-4">
 
                             <p class="text-dark">{{ $report->description }}</p>
+                            @php
+                                $arrayAttachments = explode(';', $report->attachments);
+                            @endphp
+                            <ul class="list-unstyled">
+                                @foreach ($arrayAttachments as $key => $item)
+                                    @php
+                                        $ext = strtolower(pathinfo($item, PATHINFO_EXTENSION));
+                                        
+                                        $icon = 'fa-file';
+                                        if ($ext == 'pdf') {
+                                            $icon = 'fa-file-pdf';
+                                        } elseif ($ext == 'word') {
+                                            $icon = 'fa-file-word';
+                                        } elseif (in_array($ext, ['jpeg', 'jpg', 'png'])) {
+                                            $icon = 'fa-file-image';
+                                        }
+                                    @endphp
+                                    @if (!empty($item))
+                                        <li class="list-attachment">
+                                            <input type="hidden" name="old_attachments[{{ $key }}]"
+                                                value="{{ $item }}" />
+                                            <a target="_blank" href="{{ URL::to('/') . '/files/' . $item }}"
+                                                class="btn-link text-secondary"><i
+                                                    class="far fa-fw {{ $icon }}"></i>
+                                                {{ $item }} </a>
 
+
+                                        </li>
+                                    @endif
+                                @endforeach
+
+                            </ul>
                         </div>
                     </div>
 

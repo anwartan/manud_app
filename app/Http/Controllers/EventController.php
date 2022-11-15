@@ -44,8 +44,8 @@ class EventController extends Controller
             'description' => 'required',
             'tag'=>'required',
             'link_url'=>'url',
-            'image' => 'required|mimetypes:image/png,image/jpeg,image/svg|max:2048',
-            'attachments.*'=>'max:2048',
+            'image' => 'required|mimetypes:image/png,image/jpeg,image/svg|max:5120',
+            'attachments.*'=>'max:5120',
         ]);
         $image = FileUpload::upload($request->file('image'));
         $data=[];
@@ -109,8 +109,8 @@ class EventController extends Controller
             'description' => 'required',
             'tag'=>'required',
             'link_url'=>'url',
-            'image' => 'mimetypes:image/png,image/jpeg,image/svg|max:2048',
-            'attachments.*'=>'max:2048',
+            'image' => 'mimetypes:image/png,image/jpeg,image/svg|max:5120',
+            'attachments.*'=>'max:5120',
         ]);
         $image="";
         if($request->hasfile('image'))

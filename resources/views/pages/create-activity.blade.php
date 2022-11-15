@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Press Release')
+@section('title', 'Activity')
 
 @section('content_header')
     <h1>Create Activity</h1>

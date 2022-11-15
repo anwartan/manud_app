@@ -41,11 +41,12 @@ class ActivityController extends Controller
     {
         try{
         
-            $request->validate([
+           $validate= $request->validate([
                'title' => 'required|max:255',
                'description' => 'required|max:255',
-               'attachments.*'=>'max:2048',
+               'attachments.*'=>'max:5120',
            ]);
+           
            $data=[];
            if($request->hasfile('attachments'))
            {
@@ -64,6 +65,7 @@ class ActivityController extends Controller
            return redirect('/activity')
            ->with('success','Activity created successfully.');
        }catch(Exception $ex){
+        dd($ex);
            return redirect('/activity')
            ->with('failed',$ex->getMessage());
        }
@@ -105,7 +107,7 @@ class ActivityController extends Controller
             $request->validate([
                'title' => 'required|max:255',
                'description' => 'required|max:255',
-               'attachments.*'=>'max:2048',
+               'attachments.*'=>'max:5120',
            ]);
            $data=[];
            if($request->hasfile('attachments'))

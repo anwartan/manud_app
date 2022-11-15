@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Product Role')
+@section('title', 'Rules Product')
 
 @section('content_header')
-    <h1>Edit Product Role</h1>
+    <h1>Edit Rules Product</h1>
 @stop
 {{-- @section('plugins.Datatables', true) --}}
 @section('plugins.bs-custom-file-input', true)
@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Product Role Information</h3>
+                    <h3 class="card-title">Rules Product Information</h3>
                 </div>
 
 

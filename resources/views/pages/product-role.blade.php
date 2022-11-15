@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Product Role')
+@section('title', 'Rules Product')
 
 @section('content_header')
     <h1>Product Role</h1>
@@ -29,7 +29,7 @@
             'destroy' => true,
         ];
     @endphp
-    <x-adminlte-card title="Product Role Information" theme="primary">
+    <x-adminlte-card title="Rules Product Information" theme="primary">
         @if (session('failed'))
             <div class="alert alert-danger">
                 {{ session('failed') }}
@@ -41,7 +41,7 @@
             </div>
         @endif
 
-        <a href="{{ url('/product-role/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Product Role</a>
+        <a href="{{ url('/product-role/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Rules Product</a>
 
 
         <x-adminlte-datatable withFooter id="users" :heads="$heads" :config="$config" bordered hoverable striped

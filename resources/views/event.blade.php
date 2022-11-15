@@ -38,7 +38,13 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold">Latest {{ $tag }}</h4>
+                                <h4 class="m-0 text-uppercase font-weight-bold">
+                                    @if ($tag == 'CULTURE')
+                                        KARYA UMKM
+                                    @else
+                                        Latest {{ $tag }}
+                                    @endif
+                                </h4>
                                 {{-- <a class="text-secondary font-weight-medium text-decoration-none" href="">View
                                     All</a> --}}
                             </div>

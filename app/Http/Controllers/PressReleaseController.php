@@ -24,8 +24,8 @@ class PressReleaseController extends Controller
         $validate = $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'image' => 'required|mimetypes:image/png,image/jpeg,image/svg|max:2048',
-            'attachments.*'=>'max:2048',
+            'image' => 'required|mimetypes:image/png,image/jpeg,image/svg|max:5120',
+            'attachments.*'=>'max:5120',
         ]);
         $image = FileUpload::upload($request->file('image'));
         $data=[];
@@ -57,8 +57,8 @@ class PressReleaseController extends Controller
         $validate = $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'image' => 'mimetypes:image/png,image/jpeg,image/svg|max:2048',
-            'attachments.*'=>'max:2048',
+            'image' => 'mimetypes:image/png,image/jpeg,image/svg|max:5120',
+            'attachments.*'=>'max:5120',
         ]);
         $image="";
         if($request->hasfile('image'))

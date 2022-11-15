@@ -57,7 +57,7 @@
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
                                             href="{{ $item->link_url }}">{{ $item->title }}</a>
-                                        <p class="m-0">{{ $item->description }}</p>
+                                        <p class="m-0 text-ellipsis">{{ $item->description }}</p>
                                     </div>
                                 </div>
                             </div>
