@@ -38,7 +38,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold">Product Role Terbaru</h4>
+                                <h4 class="m-0 text-uppercase font-weight-bold">Rule Product</h4>
                                 {{-- <a class="text-secondary font-weight-medium text-decoration-none" href="">View
                                     All</a> --}}
                             </div>
@@ -51,7 +51,7 @@
                                     <div class="bg-white border border-top-0 p-4">
                                         <div class="mb-2">
                                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                                href="">Product Role</a>
+                                                href="">Rule Product</a>
                                             <a class="text-body"
                                                 href=""><small>{{ date('M d, Y', strtotime($item->created_at)) }}</small></a>
                                         </div>
