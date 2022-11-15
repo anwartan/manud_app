@@ -41,7 +41,7 @@ Route::middleware(['auth','role:ADMIN,SUPER_ADMIN'])->group(function(){
     Route::get('/event/delete/{event}', [App\Http\Controllers\EventController::class, 'destroy']);
 
     Route::resource('/lowongan',LowonganController::class);
-    Route::get('/lowongan/delete/{layanan}', [App\Http\Controllers\LowonganController::class, 'destroy']);
+    Route::get('/lowongan/delete/{lowongan}', [App\Http\Controllers\LowonganController::class, 'destroy']);
 
     Route::resource('/layanan',LayananController::class);
     Route::get('/layanan/delete/{layanan}', [App\Http\Controllers\LayananController::class, 'destroy']);
