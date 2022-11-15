@@ -23,6 +23,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('biznews/css/style.css') }}" rel="stylesheet">
+    <style>
+        .text-ellipsis {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>

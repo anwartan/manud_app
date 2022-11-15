@@ -18,7 +18,7 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'description' => 'required',
-            'image' =>'mimetypes:image/png,image/jpeg,image/svg|max:2048',
+            'image' =>'mimetypes:image/png,image/jpeg,image/svg|max:5120',
             'vision'=>'required',
             'mission'=>'required'
         ]);

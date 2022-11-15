@@ -45,7 +45,7 @@ class BudgetController extends Controller
                 'budget_date' => 'required|date_format:d/m/Y',
                 'title' => 'required|max:255',
                 'description' => 'required|max:255',
-                'attachments.*'=>'max:2048',
+                'attachments.*'=>'max:5120',
             ]);
             $data=[];
             if($request->hasfile('attachments'))
@@ -108,7 +108,7 @@ class BudgetController extends Controller
             'title' => 'required|max:255',
             'budget_date' => 'required|date_format:d/m/Y',
             'description' => 'required|max:255',
-            'attachments.*'=>'max:2048',
+            'attachments.*'=>'max:5120',
         ]);
      
         $data = $request->old_attachments;

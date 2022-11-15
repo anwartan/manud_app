@@ -53,11 +53,11 @@
                                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                                 href="">Laporan</a>
                                             <a class="text-body"
-                                                href=""><small>{{ date('M d, Y', strtotime($item->created_at)) }}</small></a>
+                                                href=""><small>{{ date('d/M/Y', strtotime($item->created_at)) }}</small></a>
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
                                             href="{{ url('/information-report') . '/' . $item->id }}">{{ $item->title }}</a>
-                                        <p class="m-0">{{ $item->description }}</p>
+                                        <p class="m-0 text-ellipsis">{{ $item->description }}</p>
                                         <div class="row">
                                             <div class="col-12">
                                                 @if (!empty($item->link_url))

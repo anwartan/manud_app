@@ -42,7 +42,7 @@
                     <div class="col-12 text-justify">
                         <div class="bg-white border border-top-0 p-4">
                             <h5 class="m-0 text-uppercase font-weight-bold">{{ $pengaduan->title }}</h5>
-                            <p class="text-dark">{{ $pengaduan->description }}</p>
+                            <p class="text-dark text-ellipsis">{{ $pengaduan->description }}</p>
                             <br>
                             <h5 class="m-0 text-uppercase font-weight-bold">Link Pengaduan</h5>
                             <a target="_blank" href="{{ $pengaduan->link_url }}"

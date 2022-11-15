@@ -57,7 +57,8 @@
                                         </div>
                                         <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
                                             href="{{ url('/information-activity') . '/' . $item->id }}">{{ $item->title }}</a>
-                                        <p class="m-0">{{ $item->description }}</p>
+                                        <p class="m-0 text-ellipsis">
+                                            {{ $item->description }}</p>
                                         <div class="row">
                                             <div class="col-12">
                                                 @if (!empty($item->link_url))
@@ -68,6 +69,7 @@
                                                 @endif
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

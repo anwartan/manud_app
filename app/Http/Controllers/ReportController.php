@@ -40,7 +40,7 @@ class ReportController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'attachments.*'=>'max:2048',
+            'attachments.*'=>'max:5120',
             
         ]);
         $data=[];
@@ -96,7 +96,7 @@ class ReportController extends Controller
         $validate = $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'attachments.*'=>'max:2048',
+            'attachments.*'=>'max:5120',
         ]);
         
         $data = $request->old_attachments;
