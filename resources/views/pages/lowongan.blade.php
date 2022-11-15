@@ -85,15 +85,7 @@
                     }
                 })
             });
-            $('#users').DataTable({
-                'columnDefs' => [
-                    [
-                        'targets' => 3,
-
-                        'render' => ,
-                    ],
-                ],
-            })
+            
         });
     </script>
 @stop
